@@ -12,6 +12,7 @@ namespace UseCaseRPL.Controllers
         public ActionResult Index()
         {
             ViewBag.FirstName = "Ernanda";
+            ViewBag.LastName = "Rully";
             return View();
         }
 
