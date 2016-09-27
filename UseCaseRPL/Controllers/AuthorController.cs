@@ -13,6 +13,7 @@ namespace UseCaseRPL.Controllers
         {
             ViewBag.FirstName = "Ernanda";
             ViewBag.LastName = "Rully";
+            ViewBag.Email = "ernandarn@gmail.com";
             return View();
         }
 
