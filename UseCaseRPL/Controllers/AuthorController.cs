@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using UseCaseRPL.DAL;
+using UseCaseRPL.Models;
 
 namespace UseCaseRPL.Controllers
 {
@@ -11,10 +13,12 @@ namespace UseCaseRPL.Controllers
         // GET: Author
         public ActionResult Index()
         {
-            ViewBag.FirstName = "Ernanda";
-            ViewBag.LastName = "Rully";
-            ViewBag.Email = "ernandarn@gmail.com";
-            return View();
+            // ViewBag.FirstName = "Ernanda";
+            //ViewBag.LastName = "Rully";
+            //ViewBag.Email = "ernandarn@gmail.com";
+            AuthorsDAL autDAL = new AuthorsDAL();
+            var model = autDAL.getAll();
+            return View(model);
         }
 
         // GET: Author/Details/5
