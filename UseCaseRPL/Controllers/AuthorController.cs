@@ -6,29 +6,28 @@ using System.Web.Mvc;
 
 namespace UseCaseRPL.Controllers
 {
-    public class PelangganController : Controller
+    public class AuthorController : Controller
     {
-        // GET: Pelanggan
+        // GET: Author
         public ActionResult Index()
         {
-            ViewBag.CategoryName = "Ernanda Rully";
-
+            ViewBag.FirstName = "Ernanda";
             return View();
         }
 
-        // GET: Pelanggan/Details/5
+        // GET: Author/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Pelanggan/Create
+        // GET: Author/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Pelanggan/Create
+        // POST: Author/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -44,13 +43,13 @@ namespace UseCaseRPL.Controllers
             }
         }
 
-        // GET: Pelanggan/Edit/5
+        // GET: Author/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Pelanggan/Edit/5
+        // POST: Author/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -66,13 +65,13 @@ namespace UseCaseRPL.Controllers
             }
         }
 
-        // GET: Pelanggan/Delete/5
+        // GET: Author/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Pelanggan/Delete/5
+        // POST: Author/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
