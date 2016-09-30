@@ -55,4 +55,3 @@ namespace UseCaseRPL.DAL
         }
     }
     }
-}
