@@ -13,9 +13,6 @@ namespace UseCaseRPL.Controllers
         // GET: Author
         public ActionResult Index()
         {
-            // ViewBag.FirstName = "Ernanda";
-            //ViewBag.LastName = "Rully";
-            //ViewBag.Email = "ernandarn@gmail.com";
             AuthorsDAL autDAL = new AuthorsDAL();
             var model = autDAL.getAll();
             return View(model);

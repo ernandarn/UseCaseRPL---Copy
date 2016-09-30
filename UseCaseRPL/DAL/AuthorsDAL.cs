@@ -6,7 +6,7 @@ using UseCaseRPL.Models;
 
 namespace UseCaseRPL.DAL
 {
-    public class AuthorsDAL
+    public class AuthorsDAL : IDisposable
     {
         private CommerceDbEntities db;
         public AuthorsDAL()
@@ -35,6 +35,24 @@ namespace UseCaseRPL.DAL
                 throw new Exception("Data dengan id " + id.ToString() + " tidak ditemukan");
         }
 
-        
+
+        public void Create(Author author)
+        {
+            try
+            {
+                db.Authors.Add(author);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: " + ex.Message);
+            }
+        }
+
+        public void Dispose()
+        {
+           db.Dispose();
+        }
+    }
     }
 }
