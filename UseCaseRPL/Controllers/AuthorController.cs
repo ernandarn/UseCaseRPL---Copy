@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UseCaseRPL.DAL;
 using UseCaseRPL.Models;
+using System.Net;
 
 namespace UseCaseRPL.Controllers
 {
@@ -32,18 +33,22 @@ namespace UseCaseRPL.Controllers
 
         // POST: Author/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Author author)
         {
-            try
+            using (AuthorsDAL service = new AuthorsDAL())
             {
-                // TODO: Add insert logic here
+                try
+                {
+                    service.Create(author);
+                    TempData["Pesan"] = Helpers.Pesan.getPesan("Success!", "success", "Data author " + author.FirstName + " berhasil di tambah");
+                }
+                catch (Exception ex)
+                {
+                    TempData["Pesan"] = Helpers.Pesan.getPesan("Error!", "danger", ex.Message);
+                }
 
-                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Author/Edit/5
