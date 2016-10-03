@@ -40,11 +40,13 @@ namespace UseCaseRPL.Controllers
                 try
                 {
                     service.Create(author);
-                    TempData["Pesan"] = Helpers.Pesan.getPesan("Success!", "success", "Data author " + author.FirstName + " berhasil di tambah");
+                   // TempData["Pesan"] = Helpers.Pesan.getPesan("Sukses !", "Sukses", "Data Author " + author.FirstName + " berhasil ditambah");
+                    //TempData["Pesan"] = Helpers.Pesan.getPesan("Success!", "success", "Data author " + author.FirstName + " berhasil di tambah");
                 }
                 catch (Exception ex)
                 {
-                    TempData["Pesan"] = Helpers.Pesan.getPesan("Error!", "danger", ex.Message);
+                    //TempData["Pesan"] = Helpers.Pesan.getPesan("Error!", "danger", ex.Message);
+                    throw new Exception();
                 }
 
             }
