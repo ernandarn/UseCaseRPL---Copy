@@ -41,12 +41,12 @@ namespace UseCaseRPL.Controllers
                 {
                     service.Create(author);
                    // TempData["Pesan"] = Helpers.Pesan.getPesan("Sukses !", "Sukses", "Data Author " + author.FirstName + " berhasil ditambah");
-                    //TempData["Pesan"] = Helpers.Pesan.getPesan("Success!", "success", "Data author " + author.FirstName + " berhasil di tambah");
+                    TempData["Pesan"] = Helpers.Pesan.getPesan("Success!", "success", "Data author " + author.FirstName + " berhasil di tambah");
                 }
                 catch (Exception ex)
                 {
-                    //TempData["Pesan"] = Helpers.Pesan.getPesan("Error!", "danger", ex.Message);
-                    throw new Exception();
+                    TempData["Pesan"] = Helpers.Pesan.getPesan("Error!", "danger", ex.Message);
+                   // throw new Exception();
                 }
 
             }
@@ -56,22 +56,42 @@ namespace UseCaseRPL.Controllers
         // GET: Author/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            using (AuthorsDAL service = new AuthorsDAL())
+            {
+                var author = service.GetByID(id);
+                return View(author);
+            }
         }
 
         // POST: Author/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            using (AuthorsDAL service = new AuthorsDAL())
             {
-                // TODO: Add update logic here
+                //    try
+                //    {
+                //        service.Edit(id);
+                //        TempData["Pesan"] = Helpers.KotakPesan.getPesan("Success!", "success", "Data " + author.FirstName + " successfully changed");
+                //    }
+                //    catch (Exception ex)
+                //    {
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                //        TempData["Pesan"] = Helpers.KotakPesan.getPesan("Error!", "danger", ex.Message);
+                //    }
+
+                //}
+                //return RedirectToAction("Index");
+                try
+                {
+                    // TODO: Add update logic here
+
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View();
+                }
             }
         }
 

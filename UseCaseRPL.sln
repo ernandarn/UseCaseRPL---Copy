@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseRPL", "UseCaseRPL\UseCaseRPL.csproj", "{8E94D12F-7DF4-4C05-B27D-A13F7B6297DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseRPL2", "UseCaseRPL\UseCaseRPL2.csproj", "{8E94D12F-7DF4-4C05-B27D-A13F7B6297DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseRPL.Tests", "UseCaseRPL.Tests\UseCaseRPL.Tests.csproj", "{77B7E3CD-FBBF-4B8F-B88E-B46D0502C0AB}"
 EndProject

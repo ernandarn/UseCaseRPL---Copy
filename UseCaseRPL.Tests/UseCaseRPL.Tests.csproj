@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UseCaseRPL\UseCaseRPL.csproj">
+    <ProjectReference Include="..\UseCaseRPL\UseCaseRPL2.csproj">
       <Project>{8E94D12F-7DF4-4C05-B27D-A13F7B6297DA}</Project>
-      <Name>UseCaseRPL</Name>
+      <Name>UseCaseRPL2</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

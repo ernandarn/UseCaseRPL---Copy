@@ -49,6 +49,31 @@ namespace UseCaseRPL.DAL
             }
         }
 
+
+        public void Edit(Author obj)
+        {
+            var result = GetByID(obj.AuthorID);
+
+            if (result != null)
+            {
+                result.FirstName = obj.FirstName;
+                result.LastName = obj.LastName;
+                result.Email = obj.Email;
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+            else
+            {
+                throw new Exception("Data tidak ditemukan !");
+            }
+        }
+
         public void Dispose()
         {
            db.Dispose();
